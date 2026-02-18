@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazal - Personal Website</title>
+  <link rel="stylesheet" crossorigin href="/assets/index-Dx9qhfu6.css">
+</head>
+<body class="bg-black min-h-screen">
+
+    <!-- Hero Section -->
+    <section class="relative bg-black text-white py-20">
+        <!-- Animated radial gradient blobs -->
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+        <div class="hero-blob hero-blob-3"></div>
+        <div class="hero-blob hero-blob-4"></div>
+        <!-- Content -->
+        <div class="fade-in relative z-10 max-w-6xl mx-auto py-25 px-4 text-center">
+            <h2 class="text-5xl font-bold mb-4">Yo, I'm Fazal</h2>
+            <p class="text-xl mb-8 text-gray-300">Develop | Design | Decode</p>
+            <a href="https://github.com/FazalThe" target="_blank" class="inline-block bg-black-transparent-40% text-white px-9 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-900 transition border-3 border-white">
+                GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-black">
+        <div class="fade-in max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-300 mb-8 text-center">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
+                    <p class="text-gray-500">Your Photo Here</p>
+                </div>
+                <div>
+                    <p class="text-gray-300 mb-4">
+                        An 18 year old who loves to learn and explore new things. I love both technical and creative stuff.
+                        I am basically diagonosed with shiny object syndrome (self claim).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
