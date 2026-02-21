@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+html {
+  overflow-x: clip;
+}
+body {
+  overflow: clip;
+}
+
 /* ── Fade-in + whip entrance ── */
 @keyframes whipIn {
   0% {
@@ -98,4 +105,71 @@
   0%   { transform: translate(0, 0) scale(1); }
   50%  { transform: translate(90px, -30px) scale(1.1); }
   100% { transform: translate(-60px, 50px) scale(1.05); }
+}
+
+/* ── Cosmic light from bottom edge ── */
+.cosmic-glow {
+  position: relative;
+  width: 100%;
+  height: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.cosmic-beam {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  transform-origin: center bottom;
+}
+
+.cosmic-beam-1 {
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(ellipse at 50% 50%, #6366f1, #4f46e5 30%, transparent 70%);
+  left: 50%;
+  margin-left: -400px;
+  bottom: -250px;
+  animation: cosmicPulse1 8s ease-in-out infinite alternate;
+}
+
+.cosmic-beam-2 {
+  width: 500px;
+  height: 350px;
+  background: radial-gradient(ellipse at 50% 50%, #38bdf8, #0ea5e9 30%, transparent 70%);
+  left: 25%;
+  margin-left: -250px;
+  bottom: -175px;
+  animation: cosmicPulse2 10s ease-in-out infinite alternate;
+}
+
+.cosmic-beam-3 {
+  width: 500px;
+  height: 350px;
+  background: radial-gradient(ellipse at 50% 50%, #a78bfa, #7c3aed 30%, transparent 70%);
+  right: 25%;
+  margin-right: -250px;
+  bottom: -175px;
+  animation: cosmicPulse3 12s ease-in-out infinite alternate;
+}
+
+@keyframes cosmicPulse1 {
+  0%   { opacity: 0.35; transform: scaleX(1) scaleY(1); }
+  50%  { opacity: 0.55; transform: scaleX(1.15) scaleY(1.2); }
+  100% { opacity: 0.4;  transform: scaleX(0.95) scaleY(1.05); }
+}
+
+@keyframes cosmicPulse2 {
+  0%   { opacity: 0.3;  transform: translateX(0) scaleY(1); }
+  50%  { opacity: 0.5;  transform: translateX(40px) scaleY(1.15); }
+  100% { opacity: 0.35; transform: translateX(-30px) scaleY(0.95); }
+}
+
+@keyframes cosmicPulse3 {
+  0%   { opacity: 0.3;  transform: translateX(0) scaleY(1); }
+  50%  { opacity: 0.5;  transform: translateX(-40px) scaleY(1.2); }
+  100% { opacity: 0.35; transform: translateX(30px) scaleY(0.9); }
 }
